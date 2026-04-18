@@ -11,7 +11,7 @@ const Signup = () => {
         e.preventDefault();
         try {
             // Yeh aapke backend ki Register API ko call karega
-            await axios.post('http://https://sla-backend-otk0.onrender.com/api/auth/register', formData);
+            await axios.post('https://sla-backend-otk0.onrender.com/api/auth/register', formData);
             alert("Registration Successful! Ab aap Login kar sakte hain.");
             navigate('/'); // Login page par bhej do
         } catch (err) {

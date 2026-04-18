@@ -139,7 +139,7 @@
 
 //   const fetchTickets = async () => {
 //     try {
-//       const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
+//       const res = await axios.get('https://sla-backend-otk0.onrender.com/api/tickets');
 //       setTickets(res.data);
 //     } catch (err) { console.error("Error fetching tickets"); }
 //   };
@@ -274,7 +274,7 @@ const Dashboard = ({ tickets = [] }) => {
   useEffect(() => {
     const fetchTrend = async () => {
       try {
-        const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets/stats/trend');
+        const res = await axios.get('https://sla-backend-otk0.onrender.com/api/tickets/stats/trend');
         setTrendData(res.data);
       } catch (err) {
         console.error("Trend fetch error", err);

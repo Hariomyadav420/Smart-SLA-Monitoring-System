@@ -7,7 +7,7 @@ const PerformanceStats = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets/stats/performance');
+        const res = await axios.get('https://sla-backend-otk0.onrender.com/api/tickets/stats/performance');
         setStats(res.data);
       } catch (err) {
         console.error("Error fetching performance stats", err);

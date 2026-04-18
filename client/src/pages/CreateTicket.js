@@ -207,7 +207,7 @@ const CreateTicket = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/auth/employees');
+        const res = await axios.get('https://sla-backend-otk0.onrender.com/api/auth/employees');
         console.log("Employees List from DB:", res.data);
         setEmployees(res.data); // Database ka data yahan set ho gaya
       } catch (err) {
@@ -226,7 +226,7 @@ const CreateTicket = () => {
       const token = localStorage.getItem('token');
 
       // 🔥 3. Backend ko ab 'assignedTo' aur 'assignedEmail' bhi bhej rahe hain
-      await axios.post('http://https://sla-backend-otk0.onrender.com/api/tickets/create',
+      await axios.post('https://sla-backend-otk0.onrender.com/api/tickets/create',
         {
           title,
           priority,
