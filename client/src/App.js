@@ -19,7 +19,7 @@ function App() {
   const fetchTickets = async () => {
     try {
       // Backend URL (Port 5000)
-      const res = await axios.get('http://localhost:5000/api/tickets'); 
+      const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets'); 
       setTickets(res.data);
       setLoading(false);
     } catch (err) {

@@ -51,7 +51,7 @@
 
 // //   const fetchTickets = async () => {
 // //     try {
-// //       const res = await axios.get('http://localhost:5000/api/tickets');
+// //       const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
 // //       setTickets(res.data);
 // //     } catch (err) { console.error("Error fetching tickets"); }
 // //   };
@@ -60,7 +60,7 @@
 
 // //   const handleResolve = async (id) => {
 // //     try {
-// //       await axios.put(`http://localhost:5000/api/tickets/resolve/${id}`);
+// //       await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/resolve/${id}`);
 // //       fetchTickets(); // List refresh karein
 // //       alert("Ticket Resolved! ✅");
 // //     } catch (err) { alert("Error resolving ticket"); }
@@ -246,7 +246,7 @@
 
 // //   const fetchTickets = async () => {
 // //     try {
-// //       const res = await axios.get('http://localhost:5000/api/tickets');
+// //       const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
 // //       setTickets(res.data);
 // //     } catch (err) { console.error("Error fetching tickets"); }
 // //   };
@@ -273,7 +273,7 @@
 // //         return;
 // //       }
 
-// //       await axios.put(`http://localhost:5000/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
+// //       await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
       
 // //       setIsModalOpen(false);
 // //       fetchTickets();
@@ -536,7 +536,7 @@
 
 // //   const fetchTickets = async () => {
 // //     try {
-// //       const res = await axios.get('http://localhost:5000/api/tickets');
+// //       const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
 // //       setTickets(res.data);
 // //     } catch (err) { console.error("Error fetching tickets"); }
 // //   };
@@ -578,7 +578,7 @@
 // //         return;
 // //       }
 
-// //       await axios.put(`http://localhost:5000/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
+// //       await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
       
 // //       setIsModalOpen(false);
 // //       fetchTickets();
@@ -791,7 +791,7 @@
 
 //   const fetchTickets = async () => {
 //     try {
-//       const res = await axios.get('http://localhost:5000/api/tickets');
+//       const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
 //       setTickets(res.data);
 //     } catch (err) { console.error("Error fetching tickets"); }
 //   };
@@ -802,7 +802,7 @@
 //   const handleDelete = async (id) => {
 //     if (window.confirm("Are you sure you want to delete this ticket?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/tickets/${id}`);
+//         await axios.delete(`http://https://sla-backend-otk0.onrender.com/api/tickets/${id}`);
 //         alert("Ticket Deleted! 🗑️");
 //         fetchTickets();
 //       } catch (err) {
@@ -835,7 +835,7 @@
 //         alert("Please provide resolution notes!");
 //         return;
 //       }
-//       await axios.put(`http://localhost:5000/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
+//       await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
 //       setIsModalOpen(false);
 //       fetchTickets();
 //       alert("Ticket Resolved! ✅");
@@ -1085,7 +1085,7 @@ const TicketList = () => {
 
   const fetchTickets = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tickets');
+      const res = await axios.get('http://https://sla-backend-otk0.onrender.com/api/tickets');
       setTickets(res.data);
     } catch (err) { console.error("Error fetching tickets"); }
   };
@@ -1095,7 +1095,7 @@ const TicketList = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Delete this ticket permanently?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/tickets/${id}`);
+        await axios.delete(`http://https://sla-backend-otk0.onrender.com/api/tickets/${id}`);
         fetchTickets();
       } catch (err) { alert("Error deleting"); }
     }
@@ -1104,7 +1104,7 @@ const TicketList = () => {
   const handleReopen = async (id) => {
     if (window.confirm("Are you sure you want to RE-OPEN this ticket for the employee?")) {
       try {
-        await axios.put(`http://localhost:5000/api/tickets/reopen/${id}`);
+        await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/reopen/${id}`);
         alert("Ticket Re-opened! 🔄");
         fetchTickets();
       } catch (err) { alert("Re-open failed"); }
@@ -1129,7 +1129,7 @@ const TicketList = () => {
     if (!resolutionData.proofUrl) return alert("Please provide a Proof Link (Screenshot/Drive)!");
     
     try {
-      await axios.put(`http://localhost:5000/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
+      await axios.put(`http://https://sla-backend-otk0.onrender.com/api/tickets/resolve/${selectedTicket._id}`, resolutionData);
       setIsModalOpen(false);
       fetchTickets();
       alert("Work Submitted! ✅");
