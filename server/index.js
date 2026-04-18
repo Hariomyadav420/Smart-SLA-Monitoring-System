@@ -33,6 +33,12 @@ io.on('connection', (socket) => {
   });
 });
 
+app.use(cors({
+    origin: "https://smart-sla-monitoring-system.vercel.app", // Aapka frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
+
 // --- 2. MIDDLEWARES ---
 app.use(cors());
 app.use(express.json());
