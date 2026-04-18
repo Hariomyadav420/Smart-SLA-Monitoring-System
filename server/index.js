@@ -34,7 +34,7 @@ io.on('connection', (socket) => {
 });
 
 app.use(cors({
-    origin: "https://smart-sla-monitoring-system.vercel.app", // Aapka frontend URL
+    origin: ["https://smart-sla-monitoring-system.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
