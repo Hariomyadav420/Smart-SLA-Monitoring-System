@@ -44,7 +44,12 @@ app.use(cors());
 app.use(express.json());
 
 // --- 3. DATABASE CONNECTION ---
-const MONGO_URI = "mongodb://127.0.0.1:27017/sla_monitor";
+// const MONGO_URI = "mongodb://127.0.0.1:27017/sla_monitor";
+// mongoose.connect(MONGO_URI)
+//   .then(() => console.log("✅ MongoDB Connected Successfully"))
+//   .catch(err => console.log("❌ MongoDB Connection Error:", err));
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/sla_monitor";
+
 mongoose.connect(MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected Successfully"))
   .catch(err => console.log("❌ MongoDB Connection Error:", err));
