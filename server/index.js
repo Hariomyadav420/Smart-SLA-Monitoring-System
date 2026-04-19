@@ -18,7 +18,7 @@ const app = express();
 const server = http.createServer(app); // Server yahan ban gaya
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: ["https://smart-sla-monitoring-system.vercel.app", "http://localhost:3000"],
     methods: ["GET", "POST"]
   }
 });
@@ -33,14 +33,32 @@ io.on('connection', (socket) => {
   });
 });
 
+const allowedOrigins = [
+  "https://smart-sla-monitoring-system.vercel.app",
+  "http://localhost:3000"
+];
+
 app.use(cors({
-    origin: ["https://smart-sla-monitoring-system.vercel.app", "http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error('CORS Policy block: Origin not allowed'), false);
+    }
+    return callback(null, true);
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
+// app.use(cors({
+//     origin: ["https://smart-sla-monitoring-system.vercel.app", "http://localhost:3000"],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     credentials: true
+// }));
+
 // --- 2. MIDDLEWARES ---
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 // --- 3. DATABASE CONNECTION ---
